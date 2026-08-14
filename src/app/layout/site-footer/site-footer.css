@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+.site-footer {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  span {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 560px) {
+    min-height: 76px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+}
