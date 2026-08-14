@@ -1,0 +1,24 @@
+:root {
+  --color-bg: #181b19;
+  --color-bg-deep: #101310;
+  --color-surface: #222622;
+  --color-surface-raised: #292e2a;
+  --color-text: #f3f4ef;
+  --color-muted: #9ea49d;
+  --color-accent: #c8ff28;
+  --color-accent-soft: rgb(200 255 40 / 48%);
+  --color-border: rgb(243 244 239 / 16%);
+
+  --font-display: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
+  --font-body: 'Arial Narrow', 'Roboto Condensed', 'Helvetica Neue Condensed', sans-serif;
+  --font-mono: 'Cascadia Mono', 'Roboto Mono', Consolas, monospace;
+
+  --content-width: 1480px;
+  --page-gutter: clamp(18px, 1.85vw, 30px);
+  --header-height: 54px;
+  --footer-height: 50px;
+
+  --duration-fast: 160ms;
+  --duration-reveal: 560ms;
+  --ease-industrial: cubic-bezier(0.22, 1, 0.36, 1);
+}
