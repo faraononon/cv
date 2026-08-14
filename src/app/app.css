@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+}
+
+.site-frame {
+  min-height: 100dvh;
+  overflow: clip;
+}
