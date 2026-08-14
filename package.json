@@ -1,5 +1,5 @@
 {
-  "name": "ai-learning",
+  "name": "portfolio",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "scorer:eval": "web-codegen-scorer eval --env=.web-codegen-scorer/ai-learning/config.mjs --runner=codex --limit=1",
-    "scorer:eval:local": "web-codegen-scorer eval --env=.web-codegen-scorer/ai-learning/config.mjs --local --limit=1",
+    "scorer:eval": "web-codegen-scorer eval --env=.web-codegen-scorer/portfolio/config.mjs",
+    "scorer:eval:local": "web-codegen-scorer eval --env=.web-codegen-scorer/portfolio/config.mjs --local",
     "scorer:report": "web-codegen-scorer report"
   },
   "private": true,
