@@ -1,0 +1,124 @@
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: block;
+  background: color-mix(in srgb, var(--color-bg) 50%, transparent);
+  backdrop-filter: blur(16px);
+}
+
+.header {
+  display: flex;
+  height: var(--header-height);
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.brand {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+
+    @media (max-width: 560px) {
+      font-size: 1rem;
+    }
+  }
+
+  .brand-separator {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 300;
+
+    @media (max-width: 560px) {
+      font-size: 0.78rem;
+    }
+  }
+
+  .brand-label {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    @media (max-width: 560px) {
+      font-size: 0.48rem;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  @media (max-width: 560px) {
+    gap: 5px;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: clamp(24px, 3.1vw, 52px);
+  padding-left: clamp(18px, 2vw, 30px);
+
+  a {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color var(--duration-fast) ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: -8px;
+      left: 0;
+      height: 1px;
+      background: var(--color-accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform var(--duration-fast) var(--ease-industrial);
+    }
+
+    span {
+      color: var(--color-accent);
+      font-size: 0.56rem;
+      opacity: 0.58;
+
+      @media (max-width: 560px) {
+        display: none;
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-accent);
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    @media (max-width: 560px) {
+      font-size: clamp(0.54rem, 2.35vw, 0.64rem);
+      letter-spacing: 0;
+    }
+  }
+
+  @media (max-width: 560px) {
+    gap: clamp(10px, 3.3vw, 16px);
+    padding-left: 10px;
+  }
+}

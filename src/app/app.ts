@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { AvailabilityFooter } from './shared/ui/availability-footer/availability-footer';
-import { SiteHeader } from './shared/ui/site-header/site-header';
+import { SiteFooter } from './layout/site-footer/site-footer';
+import { SiteHeader } from './layout/site-header/site-header';
 
 @Component({
   selector: 'app-root',
-  imports: [AvailabilityFooter, RouterOutlet, SiteHeader],
+  imports: [RouterOutlet, SiteFooter, SiteHeader],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
