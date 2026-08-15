@@ -1,0 +1,207 @@
+:host {
+  display: block;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(250px, 27%) minmax(340px, 1fr) minmax(220px, 0.42fr) 132px;
+  min-height: 214px;
+  overflow: hidden;
+  background: var(--color-surface);
+  transition: background-color var(--duration-fast) ease;
+
+  &:hover {
+    background-color: var(--color-surface-raised);
+
+    .visual img {
+      filter: grayscale(0) brightness(1) contrast(1);
+      transform: scale(1.045);
+    }
+  }
+
+  .visual {
+    min-width: 0;
+    height: 214px;
+    overflow: hidden;
+    border-right: 1px solid var(--color-border);
+    background: #090b0a;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(1) brightness(0.72) contrast(1.12);
+      transform: scale(1.01);
+      transition:
+        filter 420ms ease,
+        transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+  .body {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px clamp(24px, 3vw, 48px);
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    span {
+      color: var(--color-muted);
+    }
+  }
+
+  h3 {
+    margin-top: 14px;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 3.8rem);
+    font-weight: 400;
+    line-height: 0.9;
+    text-transform: uppercase;
+  }
+
+  .responsibility {
+    max-width: 680px;
+    margin-top: 16px;
+    color: var(--color-muted);
+    font-size: clamp(0.88rem, 1.05vw, 1rem);
+    line-height: 1.45;
+  }
+
+  .results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin-top: 18px;
+
+    li {
+      position: relative;
+      padding-left: 14px;
+      color: var(--color-text);
+      font-family: var(--font-mono);
+      font-size: clamp(0.62rem, 0.78vw, 0.74rem);
+      text-transform: uppercase;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        color: var(--color-accent);
+        content: '+';
+      }
+    }
+  }
+
+  .technologies {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    border-left: 1px solid var(--color-border);
+    padding: 18px;
+
+    .technologies-label {
+      color: var(--color-accent);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      margin-top: 13px;
+    }
+
+    li {
+      color: var(--color-text);
+      font-family: var(--font-mono);
+      font-size: clamp(0.6rem, 0.72vw, 0.72rem);
+      white-space: nowrap;
+
+      &::before {
+        margin-right: 5px;
+        color: var(--color-muted);
+        content: '/';
+      }
+    }
+  }
+
+  .company-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border-left: 1px solid var(--color-border);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.67rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    span:last-child {
+      font-size: 1rem;
+      transition: transform var(--duration-fast) ease;
+    }
+
+    &:hover span:last-child {
+      transform: translateX(4px);
+    }
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: minmax(180px, 25%) 1fr minmax(190px, 0.38fr) 118px;
+
+    .body {
+      padding-inline: 16px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+
+    .visual {
+      height: 180px;
+      border-right: 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .body {
+      min-height: 240px;
+      padding: 26px 18px;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    .technologies {
+      border-top: 1px solid var(--color-border);
+      border-left: 0;
+      padding: 24px 18px 28px;
+
+      ul {
+        width: 100%;
+      }
+    }
+
+    .company-link {
+      min-height: 58px;
+      border-top: 1px solid var(--color-border);
+      border-left: 0;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<article class="card" [attr.id]="experience().slug">
+  <div class="visual">
+    <img
+      [ngSrc]="experience().image.src"
+      [alt]="experience().image.alt"
+      [width]="experience().image.width"
+      [height]="experience().image.height"
+    />
+  </div>
+
+  <div class="body">
+    <div class="meta">
+      <time>{{ experience().period }}</time>
+      <span>{{ experience().headline }}</span>
+    </div>
+    <h3>{{ experience().company }}</h3>
+    <p class="responsibility">{{ experience().responsibility }}</p>
+
+    <ul class="results" aria-label="Supporting results">
+      @for (result of experience().supportingResults; track result) {
+        <li>{{ result }}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="technologies">
+    <span class="technologies-label">Core stack</span>
+    <ul [attr.aria-label]="experience().company + ' technologies'">
+      @for (technology of experience().technologies; track technology) {
+        <li>{{ technology }}</li>
+      }
+    </ul>
+  </div>
+
+  <a
+    class="company-link"
+    [href]="experience().companyUrl"
+    target="_blank"
+    rel="noopener noreferrer"
+    [attr.aria-label]="'Visit ' + experience().company + ' website (opens in a new tab)'"
+    [attr.title]="'Visit ' + experience().company + ' website'"
+  >
+    <span>View company</span>
+    <span aria-hidden="true">→</span>
+  </a>
+</article>
