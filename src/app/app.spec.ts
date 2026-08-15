@@ -24,5 +24,6 @@ describe('App', () => {
     expect(compiled.querySelector('app-site-header')).toBeTruthy();
     expect(compiled.querySelector('router-outlet')).toBeTruthy();
     expect(compiled.querySelector('app-site-footer')).toBeTruthy();
+    expect(compiled.querySelector('app-scroll-top-button')).toBeTruthy();
   });
 });

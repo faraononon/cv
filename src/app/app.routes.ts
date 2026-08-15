@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { HomePage } from './features/home/home-page/home-page';
+import { PortfolioPage } from './pages/portfolio/portfolio-page';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomePage,
+    component: PortfolioPage,
     title: 'Dmitriy Farion — Angular Frontend Engineer',
   },
   { path: '**', redirectTo: '' },
