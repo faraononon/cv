@@ -1,0 +1,36 @@
+<section class="skills" id="skills" aria-labelledby="skills-title">
+  <header class="header">
+    <div>
+      <p class="eyebrow">Capabilities</p>
+      <h2 id="skills-title">Skills</h2>
+    </div>
+
+    <p class="intro">Technical depth organized by how it contributes to product delivery.</p>
+  </header>
+
+  <div class="grid">
+    @for (group of groups; track group.id) {
+      <article [class]="'group ' + group.id">
+        <header>
+          <h3>{{ group.title }}</h3>
+          <span aria-hidden="true">{{ group.skills.length }}</span>
+        </header>
+
+        <p>{{ group.description }}</p>
+
+        <ul [attr.aria-label]="group.title + ' skills'">
+          @for (skill of group.skills; track skill.label) {
+            <li [class.with-icon]="skill.icon">
+              @if (skill.icon) {
+                <span class="icon" aria-hidden="true">
+                  <img [ngSrc]="skill.icon" width="22" height="22" alt="" />
+                </span>
+              }
+              <span>{{ skill.label }}</span>
+            </li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>
