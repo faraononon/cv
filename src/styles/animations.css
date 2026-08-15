@@ -1,0 +1,22 @@
+@media (prefers-reduced-motion: no-preference) {
+  app-angular-mark .mark::before {
+    animation: angular-mark-solar-pulse 5s ease-in-out infinite alternate;
+  }
+
+  app-angular-mark .mark::after {
+    animation: angular-mark-solar-rays 32s linear infinite;
+  }
+}
+
+@keyframes angular-mark-solar-pulse {
+  to {
+    opacity: 0.58;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes angular-mark-solar-rays {
+  to {
+    transform: rotate(1turn);
+  }
+}

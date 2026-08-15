@@ -60,26 +60,4 @@
     fill: var(--color-bg-deep);
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    &::before {
-      animation: solar-pulse 5s ease-in-out infinite alternate;
-    }
-
-    &::after {
-      animation: solar-rays 32s linear infinite;
-    }
-  }
-}
-
-@keyframes solar-pulse {
-  to {
-    opacity: 0.58;
-    transform: scale(1.12);
-  }
-}
-
-@keyframes solar-rays {
-  to {
-    transform: rotate(1turn);
-  }
 }
