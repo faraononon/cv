@@ -9,15 +9,24 @@ describe('SkillsSection', () => {
     const section = fixture.nativeElement as HTMLElement;
 
     expect(section.querySelector('#skills')).toBeTruthy();
-    expect(section.querySelectorAll('article')).toHaveLength(5);
-    expect(section.querySelectorAll('h3')).toHaveLength(5);
-    expect(section.textContent).toContain('Angular 16+');
-    expect(section.textContent).toContain('Technical Interviews');
-    expect(section.querySelector('[aria-label="Leadership skills"]')).toBeTruthy();
-    expect(section.querySelectorAll('.icon img').length).toBeGreaterThan(10);
-    expect(section.textContent).not.toContain('skills.config.ts');
-    expect(section.textContent).not.toContain('Reusable UI Systems');
-    expect(section.textContent).not.toContain('Code Review');
-    expect(section.textContent).not.toContain('Agile / Scrum');
+    expect(section.querySelectorAll('article')).toHaveLength(6);
+    expect(section.querySelectorAll('h3')).toHaveLength(6);
+    expect(
+      Array.from(section.querySelectorAll('h3'), (heading) => heading.textContent?.trim()),
+    ).toEqual([
+      'Frontend platform',
+      'Architecture',
+      'UI & UX',
+      'Build & performance',
+      'AI Engineering',
+      'Testing & quality',
+    ]);
+    expect(section.textContent).toContain('Angular');
+    expect(section.textContent).toContain('OpenAI Codex');
+    expect(section.textContent).toContain('Harness Concepts');
+    expect(section.querySelector('[aria-label="AI Engineering skills"]')).toBeTruthy();
+    expect(section.querySelectorAll('.icon img').length).toBeGreaterThanOrEqual(10);
+    expect(section.querySelector('.ui-ux ul')?.querySelectorAll('li')).toHaveLength(4);
+    expect(section.querySelector('.tooling-delivery ul')?.querySelectorAll('li')).toHaveLength(4);
   });
 });

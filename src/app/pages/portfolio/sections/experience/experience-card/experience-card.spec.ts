@@ -18,8 +18,8 @@ describe('ExperienceCard', () => {
     expect(card.querySelector('.technologies')?.textContent).toContain('Angular');
     expect(card.querySelector('.technologies')?.textContent).toContain('Nx');
     expect(card.querySelectorAll('.technologies li')).toHaveLength(13);
-    expect(card.querySelector('.results')?.textContent).toContain('32% faster builds');
-    expect(card.querySelector('.results')?.textContent).toContain('10+ UI kit components');
+    expect(card.querySelector('.results')?.textContent).toContain('Nx monorepo migration');
+    expect(card.querySelector('.results')?.textContent).toContain('10+ reusable UI kit components');
     expect(card.querySelectorAll('.results li')).toHaveLength(3);
   });
 

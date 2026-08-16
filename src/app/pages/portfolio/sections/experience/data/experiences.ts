@@ -5,10 +5,10 @@ export const EXPERIENCES: readonly Experience[] = [
     slug: 'bimeister',
     company: 'Bimeister',
     companyUrl: 'https://bimeister.com/en/',
-    period: '06/2023 — 07/2025',
-    headline: 'Frontend platform modernization',
+    period: '06/2023 — 06/2026',
+    headline: 'Industrial SaaS platform',
     responsibility:
-      'Led a frontend team of 3 and migrated an industrial SaaS platform to an Nx monorepo.',
+      'Led a frontend team of 3, owning technical decisions, task decomposition, code reviews, and frontend delivery.',
     image: {
       src: '/images/projects/bimeister-platform.png',
       alt: 'Bimeister industrial platform website over an aerial view of a production facility',
@@ -30,16 +30,20 @@ export const EXPERIENCES: readonly Experience[] = [
       'Cypress',
       'GitLab',
     ],
-    supportingResults: ['32% faster builds', '10+ UI kit components', 'Shared features'],
+    supportingResults: [
+      'Nx monorepo migration',
+      '10+ reusable UI kit components',
+      'Shared feature components',
+    ],
   },
   {
     slug: 'b2broker',
     company: 'B2Broker',
     companyUrl: 'https://b2broker.com/products/b2core-traders-room/',
     period: '02/2022 — 05/2023',
-    headline: 'Greenfield product delivery',
+    headline: 'Greenfield Angular product',
     responsibility:
-      'Established Feature-Sliced Design and led the core product from scratch to its first release.',
+      'Designed the frontend architecture across 5 major business domains and delivered the product from scratch to its first production release.',
     image: {
       src: '/images/projects/b2broker-dashboard.png',
       alt: 'B2CORE CRM landing page with a B2Broker client dashboard preview',
@@ -58,16 +62,20 @@ export const EXPERIENCES: readonly Experience[] = [
       'Jira',
       'Git',
     ],
-    supportingResults: ['0→1 successful release', '84% test coverage', 'Mentoring & reviews'],
+    supportingResults: [
+      'Feature-Sliced architecture',
+      '84% Jest code coverage',
+      'Cross-team reviews & mentoring',
+    ],
   },
   {
     slug: 'solarlab',
     company: 'Solarlab',
     companyUrl: 'https://solarlab.ru/en/index.html',
     period: '08/2018 — 02/2022',
-    headline: 'Legacy performance & team growth',
+    headline: 'Enterprise B2B & marketplaces',
     responsibility:
-      'Modernized legacy Angular applications for enterprise B2B platforms and supported team growth.',
+      'Refactored legacy Angular modules, introduced route-level lazy loading, and optimized third-party dependencies.',
     image: {
       src: '/images/projects/solarlab-rts-market.png',
       alt: 'SolarLab website presenting fintech, blockchain, and document management solutions',
@@ -86,6 +94,10 @@ export const EXPERIENCES: readonly Experience[] = [
       'Jira',
       'Git',
     ],
-    supportingResults: ['27% faster page load', '20+ candidates interviewed', 'Trainee → Senior'],
+    supportingResults: [
+      'Trainee → Senior in 3.5 years',
+      '20+ candidates evaluated',
+      'Bundle optimization',
+    ],
   },
 ];

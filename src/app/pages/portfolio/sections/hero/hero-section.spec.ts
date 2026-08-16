@@ -51,7 +51,7 @@ describe('HeroSection', () => {
     const resume = hero.querySelector<HTMLAnchorElement>('.action.secondary');
 
     expect(selectedWork?.getAttribute('href')).toBe('/#selected-work');
-    expect(resume?.getAttribute('href')).toBe('/resume/dmitriy-farion-resume.pdf');
+    expect(resume?.getAttribute('href')).toBe('/resume/Farion_Dmitriy_Resume_EN.pdf');
     expect(resume?.hasAttribute('download')).toBe(true);
     expect(resume?.textContent).toContain('Download CV');
   });
