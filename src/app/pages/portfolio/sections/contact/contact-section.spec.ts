@@ -21,7 +21,7 @@ describe('ContactSection', () => {
       'farion.dmitri@gmail.com',
     );
     expect(section.querySelector<HTMLAnchorElement>('a[href*="github.com"]')?.href).toContain(
-      'github.com/faraononon',
+      'github.com/farion-dmitriy',
     );
     expect(section.querySelector<HTMLAnchorElement>('a[href*="t.me"]')?.href).toContain(
       't.me/extencio',

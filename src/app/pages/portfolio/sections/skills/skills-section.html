@@ -1,15 +1,17 @@
+@let content = i18n.content().skills;
+
 <section class="skills" id="skills" aria-labelledby="skills-title">
   <header class="header">
     <div>
-      <p class="eyebrow">Capabilities</p>
-      <h2 id="skills-title">Skills</h2>
+      <p class="eyebrow">{{ content.eyebrow }}</p>
+      <h2 id="skills-title">{{ content.title }}</h2>
     </div>
 
-    <p class="intro">Technical depth organized by how it contributes to product delivery.</p>
+    <p class="intro">{{ content.intro }}</p>
   </header>
 
   <div class="grid">
-    @for (group of groups; track group.id) {
+    @for (group of content.groups; track group.id) {
       <article [class]="'group ' + group.id">
         <header>
           <h3>{{ group.title }}</h3>
@@ -18,7 +20,7 @@
 
         <p>{{ group.description }}</p>
 
-        <ul [attr.aria-label]="group.title + ' skills'">
+        <ul [attr.aria-label]="content.listLabel(group.title)">
           @for (skill of group.skills; track skill.label) {
             <li [class.with-icon]="skill.icon">
               @if (skill.icon) {

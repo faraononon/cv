@@ -3,10 +3,8 @@ import { Routes } from '@angular/router';
 import { PortfolioPage } from './pages/portfolio/portfolio-page';
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: PortfolioPage,
-    title: 'Dmitriy Farion — Angular Frontend Engineer',
-  },
-  { path: '**', redirectTo: '' },
+  { path: 'en', component: PortfolioPage },
+  { path: 'ru', component: PortfolioPage },
+  { path: '', redirectTo: 'ru', pathMatch: 'full' },
+  { path: '**', redirectTo: 'ru' },
 ];

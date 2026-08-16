@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
+import { LocaleService } from '../../../../core/i18n/locale.service';
 import { ContactService } from './data-access/contact.service';
 
 type ContactField = 'name' | 'email' | 'message';
@@ -28,6 +29,7 @@ enum ContactStatus {
 export class ContactSection {
   private readonly formBuilder = inject(FormBuilder);
   private readonly contactService = inject(ContactService);
+  protected readonly i18n = inject(LocaleService);
 
   protected readonly validationLimits = CONTACT_VALIDATION;
   protected readonly contactStatuses = ContactStatus;

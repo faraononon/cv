@@ -1,14 +1,49 @@
+@let content = i18n.content().header;
+
 <header class="header page-width">
-  <a class="brand" routerLink="/" fragment="intro" aria-label="Dmitriy Farion — home">
-    <span class="brand-name">Dmitriy</span>
+  <a
+    class="brand"
+    [routerLink]="['/', i18n.locale()]"
+    fragment="intro"
+    [attr.aria-label]="content.homeLabel"
+  >
+    <span class="brand-name">{{ content.brandName }}</span>
     <span class="brand-separator" aria-hidden="true">/</span>
-    <span class="brand-label">Portfolio</span>
+    <span class="brand-label">{{ content.portfolio }}</span>
   </a>
 
-  <nav class="nav" aria-label="Primary navigation">
-    <a routerLink="/" fragment="intro"><span aria-hidden="true">01</span>About</a>
-    <a routerLink="/" fragment="selected-work"><span aria-hidden="true">02</span>Projects</a>
-    <a routerLink="/" fragment="skills"><span aria-hidden="true">03</span>Skills</a>
-    <a routerLink="/" fragment="contact"><span aria-hidden="true">04</span>Contact</a>
-  </nav>
+  <div class="header-tools">
+    <nav class="nav" [attr.aria-label]="content.navigationLabel">
+      <a [routerLink]="['/', i18n.locale()]" fragment="intro"
+        ><span aria-hidden="true">01</span>{{ content.navigation[0] }}</a
+      >
+      <a [routerLink]="['/', i18n.locale()]" fragment="selected-work"
+        ><span aria-hidden="true">02</span>{{ content.navigation[1] }}</a
+      >
+      <a [routerLink]="['/', i18n.locale()]" fragment="skills"
+        ><span aria-hidden="true">03</span>{{ content.navigation[2] }}</a
+      >
+      <a [routerLink]="['/', i18n.locale()]" fragment="contact"
+        ><span aria-hidden="true">04</span>{{ content.navigation[3] }}</a
+      >
+    </nav>
+
+    <nav class="locale-switcher" [attr.aria-label]="content.languageLabel">
+      <a
+        routerLink="/en"
+        [fragment]="i18n.fragment()"
+        [attr.aria-label]="content.englishLabel"
+        [attr.aria-current]="i18n.locale() === 'en' ? 'page' : null"
+        >EN</a
+      >
+      <span aria-hidden="true">/</span>
+      <a
+        routerLink="/ru"
+        [fragment]="i18n.fragment()"
+        [attr.aria-label]="content.russianLabel"
+        [attr.aria-current]="i18n.locale() === 'ru' ? 'page' : null"
+        >RU</a
+      >
+    </nav>
+  </div>
 </header>

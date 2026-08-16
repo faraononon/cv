@@ -17,7 +17,7 @@ describe('HeroSection', () => {
     const hero = fixture.nativeElement as HTMLElement;
 
     expect(hero.querySelector('h1')?.textContent).toContain('Dmitriy Farion');
-    expect(hero.querySelector('.role')?.textContent).toContain('Angular Frontend Engineer');
+    expect(hero.querySelector('.role')?.textContent).toContain('Senior Angular Frontend Developer');
     expect(hero.querySelector('.experience')?.textContent).toContain('7+ years');
     expect(hero.querySelector('.summary')?.textContent).toContain(
       'I love building scalable Angular platforms',
@@ -50,7 +50,7 @@ describe('HeroSection', () => {
     const selectedWork = hero.querySelector<HTMLAnchorElement>('.action.primary');
     const resume = hero.querySelector<HTMLAnchorElement>('.action.secondary');
 
-    expect(selectedWork?.getAttribute('href')).toBe('/#selected-work');
+    expect(selectedWork?.getAttribute('href')).toBe('/en#selected-work');
     expect(resume?.getAttribute('href')).toBe('/resume/Farion_Dmitriy_Resume_EN.pdf');
     expect(resume?.hasAttribute('download')).toBe(true);
     expect(resume?.textContent).toContain('Download CV');

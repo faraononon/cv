@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
-import { EXPERIENCES } from './data/experiences';
+import { LocaleService } from '../../../../core/i18n/locale.service';
 import { ExperienceCard } from './experience-card/experience-card';
 
 @Component({
@@ -10,5 +10,5 @@ import { ExperienceCard } from './experience-card/experience-card';
   styleUrl: './experience-section.css',
 })
 export class ExperienceSection {
-  protected readonly experiences = EXPERIENCES;
+  protected readonly i18n = inject(LocaleService);
 }

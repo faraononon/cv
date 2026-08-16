@@ -1,6 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import { afterNextRender, Component, DestroyRef, inject, signal } from '@angular/core';
 
+import { LocaleService } from '../../core/i18n/locale.service';
+
 const MIN_REVEAL_DISTANCE_PX = 360;
 const VIEWPORT_REVEAL_RATIO = 0.7;
 
@@ -12,6 +14,7 @@ const VIEWPORT_REVEAL_RATIO = 0.7;
 export class ScrollTopButton {
   private readonly document = inject(DOCUMENT);
   private readonly destroyRef = inject(DestroyRef);
+  protected readonly i18n = inject(LocaleService);
 
   protected readonly visible = signal(false);
 

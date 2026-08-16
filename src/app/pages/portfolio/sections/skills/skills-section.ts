@@ -1,7 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
-import { SKILL_GROUPS } from './data/skill-groups';
+import { LocaleService } from '../../../../core/i18n/locale.service';
 
 @Component({
   selector: 'app-skills-section',
@@ -10,5 +10,5 @@ import { SKILL_GROUPS } from './data/skill-groups';
   styleUrl: './skills-section.css',
 })
 export class SkillsSection {
-  protected readonly groups = SKILL_GROUPS;
+  protected readonly i18n = inject(LocaleService);
 }

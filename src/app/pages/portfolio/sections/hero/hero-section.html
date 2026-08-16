@@ -1,27 +1,26 @@
+@let content = i18n.content().hero;
+
 <section id="intro" class="hero" aria-labelledby="hero-title">
   <div class="copy">
     <h1 id="hero-title" class="title">
-      <span>Dmitriy </span>
-      <span>Farion</span>
+      <span>{{ content.firstName }} </span>
+      <span>{{ content.lastName }}</span>
     </h1>
-    <p class="role">Angular Frontend Engineer</p>
-    <p class="experience">7+ years building complex frontend platforms</p>
-    <p class="summary">
-      I love building scalable Angular platforms, shaping maintainable frontend architecture, and
-      leading teams with end-to-end ownership.
-    </p>
+    <p class="role">{{ content.role }}</p>
+    <p class="experience">{{ content.experience }}</p>
+    <p class="summary">{{ content.summary }}</p>
     <p class="availability" role="status">
       <span aria-hidden="true"></span>
-      Open to work
+      {{ content.availability }}
     </p>
 
-    <div class="actions" aria-label="Portfolio actions">
-      <a class="action primary" routerLink="/" fragment="selected-work">
-        <span>View selected work</span>
+    <div class="actions" [attr.aria-label]="content.actionsLabel">
+      <a class="action primary" [routerLink]="['/', i18n.locale()]" fragment="selected-work">
+        <span>{{ content.viewWork }}</span>
         <span class="action-icon" aria-hidden="true">→</span>
       </a>
-      <a class="action secondary" href="/resume/Farion_Dmitriy_Resume_EN.pdf" download>
-        <span>Download CV</span>
+      <a class="action secondary" [href]="content.resumeUrl" download>
+        <span>{{ content.downloadCv }}</span>
         <span class="action-icon" aria-hidden="true">↓</span>
       </a>
     </div>

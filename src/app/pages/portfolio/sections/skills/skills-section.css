@@ -59,7 +59,7 @@
     display: grid;
     min-height: 340px;
     grid-column: span 4;
-    grid-template-rows: 3rem 2.5rem auto;
+    grid-template-rows: minmax(3rem, auto) minmax(2.5rem, auto) auto;
     align-content: start;
     padding: clamp(24px, 2.2vw, 34px);
     background: var(--color-surface);
@@ -84,10 +84,11 @@
 
     h3 {
       font-family: var(--font-display);
-      font-size: clamp(1.75rem, 2.4vw, 2.7rem);
+      font-size: clamp(1.2rem, 1.75vw, 1.75rem);
       font-weight: 400;
-      line-height: 0.95;
+      line-height: 1;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     > p {

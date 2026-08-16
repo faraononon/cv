@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+import { LocaleService } from '../../../../core/i18n/locale.service';
 import { AngularMark } from './angular-mark/angular-mark';
 
 @Component({
@@ -9,4 +10,6 @@ import { AngularMark } from './angular-mark/angular-mark';
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.css',
 })
-export class HeroSection {}
+export class HeroSection {
+  protected readonly i18n = inject(LocaleService);
+}

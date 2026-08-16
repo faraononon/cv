@@ -1,13 +1,13 @@
 <button
   class="scroll-top"
   type="button"
-  aria-label="Scroll to top"
+  [attr.aria-label]="i18n.content().scrollTop.label"
   [class.visible]="visible()"
   [attr.aria-hidden]="!visible()"
   [attr.tabindex]="visible() ? 0 : -1"
   (click)="scrollToTop()"
 >
-  <span>Top</span>
+  <span>{{ i18n.content().scrollTop.text }}</span>
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <path d="m6 11 6-6 6 6M12 5v14" />
   </svg>

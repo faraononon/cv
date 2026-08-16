@@ -1,6 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
+import { LocaleService } from '../../../../../core/i18n/locale.service';
 import { Experience } from '../models/experience.model';
 
 @Component({
@@ -11,4 +12,5 @@ import { Experience } from '../models/experience.model';
 })
 export class ExperienceCard {
   readonly experience = input.required<Experience>();
+  protected readonly i18n = inject(LocaleService);
 }

@@ -1,16 +1,16 @@
+@let content = i18n.content().experience;
+
 <section id="selected-work" class="experience-list" aria-labelledby="experience-title">
   <header class="header">
     <div>
-      <p class="eyebrow">Selected work</p>
-      <h2 id="experience-title">Projects</h2>
+      <p class="eyebrow">{{ content.eyebrow }}</p>
+      <h2 id="experience-title">{{ content.title }}</h2>
     </div>
-    <p class="intro">
-      Enterprise Angular products shaped through architecture, team leadership, and hands-on delivery.
-    </p>
+    <p class="intro">{{ content.intro }}</p>
   </header>
 
   <ol>
-    @for (experience of experiences; track experience.slug) {
+    @for (experience of content.items; track experience.slug) {
       <li>
         <app-experience-card [experience]="experience" />
       </li>
