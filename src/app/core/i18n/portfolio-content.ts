@@ -509,7 +509,7 @@ export const PORTFOLIO_CONTENT: Readonly<Record<Locale, PortfolioContent>> = {
       emailPlaceholder: 'you@company.com',
       emailError: 'Введите корректный адрес электронной почты.',
       messageLabel: 'Сообщение',
-      messagePlaceholder: 'Кратко опишите проект, роль или задачу.',
+      messagePlaceholder: 'Опишите ваш проект, роль или задачу.',
       messageError: (minLength) => `Введите не менее ${minLength} символов.`,
       sending: 'Отправляем…',
       send: 'Отправить',
